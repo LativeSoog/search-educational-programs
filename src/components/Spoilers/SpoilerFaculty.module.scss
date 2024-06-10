@@ -1,0 +1,38 @@
+@import "./../../assets/styles/variables.scss";
+
+.spoiler-visible {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__text {
+    color: $turquoise;
+    font-size: 18px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.spoiler-hidden {
+  margin-top: 10px;
+  margin-left: 40px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    border-left: 2px solid $turquoise;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -30px;
+  }
+}

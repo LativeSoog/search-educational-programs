@@ -1,0 +1,17 @@
+@import "./../../assets/styles/variables.scss";
+
+.wrapper {
+  width: 1170px;
+  margin: 100px auto;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 10px;
+}
+
+.title-page {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color: $deep-blue;
+}
