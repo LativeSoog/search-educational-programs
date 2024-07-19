@@ -12,7 +12,7 @@
   }
 
   &__text {
-    color: $turquoise;
+    color: $color-turquoise;
     font-size: 18px;
   }
 
@@ -29,7 +29,7 @@
   &::before {
     content: "";
     display: block;
-    border-left: 2px solid $turquoise;
+    border-left: 2px solid $color-turquoise;
     height: 100%;
     position: absolute;
     top: 0;
