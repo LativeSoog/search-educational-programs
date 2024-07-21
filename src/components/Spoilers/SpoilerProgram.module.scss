@@ -1,0 +1,143 @@
+@import "./../../assets/styles/variables.scss";
+
+@mixin spoilerDesc {
+  font-family: "latoblack";
+  font-size: 12px;
+  color: $color-deep-blue;
+}
+
+@mixin spoilerValue {
+  color: $color-blue;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spoiler-program {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 0.5fr;
+  border: 1px solid $color-line;
+  border-radius: 10px;
+  padding: 10px;
+
+  &__specialization,
+  &__name,
+  &__form {
+    text-align: center;
+
+    &:not(:last-child) {
+      border-right: 2px solid $color-line;
+    }
+  }
+
+  &__description {
+    @include spoilerDesc;
+  }
+
+  &__value {
+    @include spoilerValue;
+  }
+}
+
+.spoiler-hidden {
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.spoiler-info {
+  display: flex;
+  justify-content: space-around;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 215px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid $color-line;
+    border-radius: 10px;
+  }
+
+  &__description {
+    @include spoilerDesc;
+  }
+
+  &__value {
+    @include spoilerValue;
+  }
+}
+
+.spoiler-exams {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid $color-line;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      border-left: 2px solid $color-line;
+      padding-left: 10px;
+    }
+  }
+
+  &__description {
+    font-family: "latoblack";
+    color: $color-deep-blue;
+    text-align: center;
+  }
+}
+
+.exams-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 4px;
+  list-style: none;
+  counter-reset: item;
+  padding: 0;
+  margin-top: 4px;
+
+  &__item {
+    counter-increment: item;
+    color: $color-blue;
+
+    &::before {
+      content: counter(item) ".";
+      margin-right: 10px;
+    }
+  }
+}
+
+.spoiler-more {
+  display: flex;
+  justify-content: center;
+
+  &__btn {
+    border: 1px solid $color-line;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    color: $color-turquoise;
+    transition:
+      background 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background: $color-turquoise;
+      color: #fff;
+    }
+  }
+}

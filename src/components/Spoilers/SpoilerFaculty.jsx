@@ -1,5 +1,6 @@
 import { useState } from "react";
 import S from "./SpoilerFaculty.module.scss";
+import { SpoilerProgram } from "./SpoilerProgram";
 
 export const SpoilerFaculty = () => {
   const [isOpenSpoiler, setIsOpenSpoiler] = useState(false);
@@ -19,7 +20,11 @@ export const SpoilerFaculty = () => {
         />
         <p className={S["spoiler-visible__text"]}>Географический факультет</p>
       </div>
-      {isOpenSpoiler && <div className={S["spoiler-hidden"]}></div>}
+      {isOpenSpoiler && (
+        <div className={S["spoiler-hidden"]}>
+          <SpoilerProgram />
+        </div>
+      )}
     </div>
   );
 };
