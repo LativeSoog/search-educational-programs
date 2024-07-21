@@ -1,8 +1,13 @@
-# React + Vite
+# Tree structure of educational programs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About Tree structure
 
-Currently, two official plugins are available:
+The tree structure is designed to provide a convenient display of university educational programs. It allows users to access both brief and detailed information about the programs, as well as filter suitable programs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
+
+| Main technologies |
+| ----------------- |
+| JavaScript        |
+| React             |
+| Redux             |
