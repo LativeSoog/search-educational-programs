@@ -1,7 +1,7 @@
 import { useState } from "react";
 import S from "./SpoilerProgram.module.scss";
 
-export const SpoilerProgram = () => {
+export const SpoilerProgram = ({ program }) => {
   const [isShowMoreInfo, setIsShowMoreInfo] = useState(false);
 
   const handleClickShowMore = () => {
@@ -17,20 +17,18 @@ export const SpoilerProgram = () => {
               Направление подготовки
             </p>
             <p className={S["spoiler-program__value"]}>
-              44.03.05 - Педагогическое образование
+              {program.nameSpecialization}
             </p>
           </div>
           <div className={S["spoiler-program__name"]}>
             <p className={S["spoiler-program__description"]}>
               Программа (профиль)
             </p>
-            <p className={S["spoiler-program__value"]}>
-              Педагогическая психология и психология личности в обучении
-            </p>
+            <p className={S["spoiler-program__value"]}>{program.nameProgram}</p>
           </div>
           <div className={S["spoiler-program__form"]}>
             <p className={S["spoiler-program__description"]}>Форма обучения</p>
-            <p className={S["spoiler-program__value"]}>Очно-заочная</p>
+            <p className={S["spoiler-program__value"]}>{program.form}</p>
           </div>
         </div>
       </div>
@@ -39,19 +37,21 @@ export const SpoilerProgram = () => {
           <div className={S["spoiler-info"]}>
             <div className={S["spoiler-info__item"]}>
               <p className={S["spoiler-info__description"]}>Срок обучения</p>
-              <p className={S["spoiler-info__value"]}>4 года 6 мес</p>
+              <p className={S["spoiler-info__value"]}>{program.duration}</p>
             </div>
             <div className={S["spoiler-info__item"]}>
               <p className={S["spoiler-info__description"]}>
                 Проходной балл в 2023 году
               </p>
-              <p className={S["spoiler-info__value"]}>273</p>
+              <p className={S["spoiler-info__value"]}>{program.score}</p>
             </div>
             <div className={S["spoiler-info__item"]}>
               <p className={S["spoiler-info__description"]}>
                 Стоимость обучения (в год)
               </p>
-              <p className={S["spoiler-info__value"]}>375 000 Р</p>
+              <p className={S["spoiler-info__value"]}>
+                {program.price} &#8381;
+              </p>
             </div>
           </div>
           <div className={S["spoiler-exams"]}>
