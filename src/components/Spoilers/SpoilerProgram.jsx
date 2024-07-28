@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ExamsList } from "../ExamsList/ExamsList";
 import S from "./SpoilerProgram.module.scss";
 
 export const SpoilerProgram = ({ program }) => {
@@ -55,33 +56,14 @@ export const SpoilerProgram = ({ program }) => {
             </div>
           </div>
           <div className={S["spoiler-exams"]}>
-            <div className={S["spoiler-exams__section"]}>
-              <p className={S["spoiler-exams__description"]}>
-                Вступительные испытания (ЕГЭ)
-              </p>
-              <ul className={S["exams-list"]}>
-                <li className={S["exams-list__item"]}>Русский язык</li>
-                <li className={S["exams-list__item"]}>
-                  Литература / Обществознание / Физика / Биология / Химия /
-                  Иностранный язык / Информатика
-                </li>
-                <li className={S["exams-list__item"]}>География</li>
-              </ul>
-            </div>
-            <div className={S["spoiler-exams__section"]}>
-              <p className={S["spoiler-exams__description"]}>
-                Вступительные испытания (СПО)
-              </p>
-              <ul className={S["exams-list"]}>
-                <li className={S["exams-list__item"]}>Русский язык</li>
-                <li className={S["exams-list__item"]}>
-                  Основы алгоритмизцаии и программирования
-                </li>
-                <li className={S["exams-list__item"]}>
-                  Основы естественно-научного знания
-                </li>
-              </ul>
-            </div>
+            <ExamsList
+              nameList={"Вступительные испытания (ЕГЭ)"}
+              examsList={program.examsEGE}
+            />
+            <ExamsList
+              nameList={"Вступительные испытания (СПО)"}
+              examsList={program.examsSPO}
+            />
           </div>
         </div>
       )}
