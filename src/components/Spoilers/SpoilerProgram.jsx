@@ -36,6 +36,10 @@ export const SpoilerProgram = ({ program }) => {
       {isShowMoreInfo && (
         <div className={S["spoiler-hidden"]}>
           <div className={S["spoiler-info"]}>
+          <div className={S["spoiler-info__item"]}>
+              <p className={S["spoiler-info__description"]}>Бюджетные места</p>
+              <p className={S["spoiler-info__value"]}>{program.kcp}</p>
+            </div>
             <div className={S["spoiler-info__item"]}>
               <p className={S["spoiler-info__description"]}>Срок обучения</p>
               <p className={S["spoiler-info__value"]}>{program.duration}</p>
