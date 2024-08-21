@@ -1,28 +1,78 @@
 import { useState } from "react";
 import S from "./FilterEGE.module.scss";
+import { useSelector } from "react-redux";
 
 export const FilterEGE = ({ setIsShowFilter }) => {
-  const [examMark, setExamMark] = useState({
-    biology: false,
-    geography: false,
-    fLanguages: false,
-    history: false,
-    literature: false,
-    mathematics: false,
-    socialS: false,
-    rLanguage: false,
-    physics: false,
-    chemistry: false,
-    informatics: false,
+  const programs = useSelector((state) => state.tree.listPrograms);
+  const [examsScore, setExamsScore] = useState({
+    biology: { nameExam: "Биология", score: undefined },
+    geography: { nameExam: "География", score: undefined },
+    fLanguages: { nameExam: "Иностранный язык", score: undefined },
+    history: { nameExam: "История", score: undefined },
+    literature: { nameExam: "Литература", score: undefined },
+    mathematics: { nameExam: "Математика", score: undefined },
+    socialS: { nameExam: "Обществознание", score: undefined },
+    rLanguage: { nameExam: "Русский язык", score: undefined },
+    physics: { nameExam: "Физика", score: undefined },
+    chemistry: { nameExam: "Химия", score: undefined },
+    informatics: { nameExam: "Информатика и ИКТ", score: undefined },
   });
 
   const handleChangeExamValue = (nameExam, value) => {
-    setExamMark((prevState) => ({ ...prevState, [nameExam]: value }));
+    setExamsScore((prevState) => ({
+      ...prevState,
+      [nameExam]: { ...prevState[nameExam], score: value },
+    }));
   };
 
   const handleCloseWindow = () => {
     setIsShowFilter((prevState) => ({ ...prevState, EGE: false }));
   };
+
+  const filterPrograms = () => {
+    return programs.reduce((acc, faculty) => {
+      const validPrograms = faculty.programsFaculty.filter((program) => {
+        const enteredExams = Object.keys(examsScore).filter(
+          (examKey) => examsScore[examKey].score != null
+        );
+
+        if (enteredExams.length === 0) {
+          return false;
+        }
+
+        const priorityGroups = program.examsEGE.reduce((groups, exam) => {
+          if (!groups[exam.priority]) {
+            groups[exam.priority] = [];
+          }
+          groups[exam.priority].push(exam.nameExam);
+          return groups;
+        }, {});
+
+        const isValid = Object.values(priorityGroups).every((group) => {
+          const hasMatchingExam = group.some((examName) =>
+            enteredExams.some(
+              (examKey) => examsScore[examKey].nameExam === examName
+            )
+          );
+
+          return hasMatchingExam;
+        });
+
+        return isValid;
+      });
+
+      if (validPrograms.length > 0) {
+        acc.push({
+          ...faculty,
+          programsFaculty: validPrograms,
+        });
+      }
+      return acc;
+    }, []);
+  };
+
+  const result = filterPrograms();
+  console.log(result);
 
   return (
     <div className={S["wrapper"]}>
@@ -40,160 +90,24 @@ export const FilterEGE = ({ setIsShowFilter }) => {
           Укажите баллы предметов ЕГЭ, которые вы сдавали
         </p>
         <div className={S["exams"]}>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Биология</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="biology"
-              min={0}
-              max={100}
-              value={examMark.biology}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>География</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="geography"
-              min={0}
-              max={100}
-              value={examMark.geography}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Иностранные языки</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="fLanguages"
-              min={0}
-              max={100}
-              value={examMark.fLanguages}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>История</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="history"
-              min={0}
-              max={100}
-              value={examMark.history}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Литература</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="literature"
-              min={0}
-              max={100}
-              value={examMark.literature}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Математика</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="mathematics"
-              min={0}
-              max={100}
-              value={examMark.mathematics}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Обществознание</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="socialS"
-              min={0}
-              max={100}
-              value={examMark.socialS}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Русский язык</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="rLanguage"
-              min={0}
-              max={100}
-              value={examMark.rLanguage}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Физика</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="physics"
-              min={0}
-              max={100}
-              value={examMark.physics}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Химия</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="chemistry"
-              min={0}
-              max={100}
-              value={examMark.chemistry}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
-          <label className={S["exams__item"]}>
-            <span className={S["exams__name"]}>Информатика</span>
-            <input
-              className={S["exams__value"]}
-              type="number"
-              id="informatics"
-              min={0}
-              max={100}
-              value={examMark.informatics}
-              onInput={(e) =>
-                handleChangeExamValue(e.target.id, e.target.value)
-              }
-            />
-          </label>
+          {Object.entries(examsScore).map(([examKey, examData]) => (
+            <label
+              className={S["exams__item"]}
+              key={examKey}>
+              <span className={S["exams__name"]}>{examData.nameExam}</span>
+              <input
+                className={S["exams__value"]}
+                type="number"
+                id={examKey}
+                min={0}
+                max={100}
+                value={examData.score}
+                onInput={(e) =>
+                  handleChangeExamValue(e.target.id, e.target.value)
+                }
+              />
+            </label>
+          ))}
         </div>
         <div className={S["buttons"]}>
           <button className={S["buttons__accept"]}>Применить</button>
