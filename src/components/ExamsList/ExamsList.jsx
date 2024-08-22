@@ -1,5 +1,6 @@
 import React from "react";
 import S from "./ExamsList.module.scss";
+import mappingData from "../../assets/data/mappingData.json";
 
 const groupSortExamByPriority = (exams) => {
   const groupedExams = exams.reduce((acc, exam) => {
@@ -24,6 +25,7 @@ const groupSortExamByPriority = (exams) => {
 
 export const ExamsList = ({ nameList, examsList }) => {
   const sortedExams = groupSortExamByPriority(examsList);
+  console.log(sortedExams);
 
   return (
     <div className={S["container-exams"]}>
@@ -36,9 +38,9 @@ export const ExamsList = ({ nameList, examsList }) => {
             {exams.map((exam, index) => (
               <React.Fragment key={exam.id}>
                 <a
-                  href={exam.link}
+                  href={mappingData.examsMapping[exam.examId]?.linkExam}
                   target="_blank">
-                  {exam.nameExam}
+                  {mappingData.examsMapping[exam.examId]?.nameExam}
                 </a>
                 {index < exams.length - 1 ? " / " : ""}
               </React.Fragment>

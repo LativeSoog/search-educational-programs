@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ExamsList } from "../ExamsList/ExamsList";
 import S from "./SpoilerProgram.module.scss";
+import mappingData from "../../assets/data/mappingData.json";
 
 export const SpoilerProgram = ({ program }) => {
   const [isShowMoreInfo, setIsShowMoreInfo] = useState(false);
@@ -29,14 +30,16 @@ export const SpoilerProgram = ({ program }) => {
           </div>
           <div className={S["spoiler-program__form"]}>
             <p className={S["spoiler-program__description"]}>Форма обучения</p>
-            <p className={S["spoiler-program__value"]}>{program.form}</p>
+            <p className={S["spoiler-program__value"]}>
+              {mappingData.formMapping[program.form]}
+            </p>
           </div>
         </div>
       </div>
       {isShowMoreInfo && (
         <div className={S["spoiler-hidden"]}>
           <div className={S["spoiler-info"]}>
-          <div className={S["spoiler-info__item"]}>
+            <div className={S["spoiler-info__item"]}>
               <p className={S["spoiler-info__description"]}>Бюджетные места</p>
               <p className={S["spoiler-info__value"]}>{program.kcp}</p>
             </div>
