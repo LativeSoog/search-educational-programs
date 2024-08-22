@@ -9,7 +9,7 @@
           "type": 1,
           "nameSpecialization": "44.03.01 - Педагогическое образование",
           "nameProgram": "География",
-          "form": "Очная",
+          "form": 1,
           "kcp": 15,
           "duration": "4 года",
           "score": 208,
@@ -17,116 +17,722 @@
           "examsEGE": [
             {
               "id": 1,
-              "nameExam": "География",
-              "priority": 1,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_geografiya.pdf"
+              "examId": 1,
+              "priority": 1
             },
             {
               "id": 2,
-              "nameExam": "Математика (профильная)",
-              "priority": 1,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_matematika.pdf"
+              "examId": 6,
+              "priority": 1
             },
             {
               "id": 3,
-              "nameExam": "Обществознание",
-              "priority": 2,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_obshestvoznanie.pdf"
+              "examId": 7,
+              "priority": 2
             },
             {
               "id": 4,
-              "nameExam": "Русский язык",
-              "priority": 3,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_russkiy-yazik.pdf"
+              "examId": 8,
+              "priority": 3
             }
           ],
           "examsSPO": [
             {
               "id": 1,
-              "nameExam": "Основы естественно-научных знаний",
-              "priority": 1,
-              "link": "https://mpgu.su/wp-content/uploads/2024/04/bac-bvo_afterSPO_osn-estestv-nauch-zn.pdf"
+              "examId": 101,
+              "priority": 1
             },
             {
               "id": 2,
-              "nameExam": "Основы педагогики",
-              "priority": 2,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_afterSPO_osn-pedagog.pdf"
+              "examId": 103,
+              "priority": 2
             },
             {
               "id": 3,
-              "nameExam": "Русский язык",
-              "priority": 3,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_russkiy-yazik.pdf"
+              "examId": 8,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": 1,
+          "nameSpecialization": "44.03.01 - Педагогическое образование",
+          "nameProgram": "География",
+          "form": 3,
+          "kcp": "приём на платной основе",
+          "duration": "4 года 6 мес.",
+          "score": "-",
+          "price": 137000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 6,
+              "priority": 1
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 2
+            },
+            {
+              "id": 4,
+              "examId": 8,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 101,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 103,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 8,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "type": 1,
+          "nameSpecialization": "44.03.01 - Педагогическое образование",
+          "nameProgram": "География и экология",
+          "form": 1,
+          "kcp": 15,
+          "duration": "5 лет",
+          "score": 224,
+          "price": 309000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 6,
+              "priority": 1
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 2
+            },
+            {
+              "id": 4,
+              "examId": 8,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 101,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 103,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 8,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "type": 1,
+          "nameSpecialization": "44.03.01 - Педагогическое образование",
+          "nameProgram": "География и Иностранный язык (английский/китайский)",
+          "form": 1,
+          "kcp": 15,
+          "duration": "5 лет",
+          "score": 249,
+          "price": 309000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 3,
+              "priority": 1
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 2
+            },
+            {
+              "id": 4,
+              "examId": 8,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 102,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 103,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 8,
+              "priority": 3
             }
           ]
         }
       ]
     },
     {
-      "id": 2,
-      "nameFaculty": "Институт физики, технологии и информационных систем",
+      "id": 12,
+      "nameFaculty": "Институт педагогики и психологии",
       "programsFaculty": [
         {
           "id": 1,
-          "type": 1, 
-          "nameSpecialization": "03.03.02 - Физика",
-          "nameProgram": "Фундаментальная физика и прорывные технологии",
-          "form": "Очная",
+          "type": 1,
+          "nameSpecialization": "37.03.01 - Психология",
+          "nameProgram": "Социальная психология развития",
+          "form": 1,
           "kcp": 25,
           "duration": "4 года",
-          "score": 258,
-          "price": 342000,
+          "score": 266,
+          "price": 309000,
           "examsEGE": [
             {
               "id": 1,
-              "nameExam": "Физика",
-              "priority": 1,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_fizika.pdf"
+              "examId": 1,
+              "priority": 1
             },
             {
               "id": 2,
-              "nameExam": "Математика (профильная)",
-              "priority": 2,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_matematika.pdf"
+              "examId": 8,
+              "priority": 2
             },
             {
               "id": 3,
-              "nameExam": "Информатика и ИКТ",
-              "priority": 2,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_informatika.pdf"
+              "examId": 7,
+              "priority": 3
             },
             {
               "id": 4,
-              "nameExam": "Иностранный язык",
-              "priority": 2,
-              "link": "https://mpgu.su/wp-content/themes/mpgu20/cpk_file/bac-bvo_inostranniy-yazik.zip"
-            },
-            {
-              "id": 5,
-              "nameExam": "Русский язык",
-              "priority": 3,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_russkiy-yazik.pdf"
+              "examId": 6,
+              "priority": 3
             }
           ],
           "examsSPO": [
             {
               "id": 1,
-              "nameExam": "Информационные системы и технологии",
-              "priority": 1,
-              "link": "https://mpgu.su/wp-content/uploads/2024/07/bac-bvo_afterSPO_inform-system-technology.pdf"
+              "examId": 104,
+              "priority": 1
             },
             {
               "id": 2,
-              "nameExam": "Основы алгоритмизации и программирования",
-              "priority": 2,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_afterSPO_osn-algoritm-programm.pdf"
+              "examId": 8,
+              "priority": 2
             },
             {
               "id": 3,
-              "nameExam": "Русский язык",
-              "priority": 3,
-              "link": "https://mpgu.su/wp-content/uploads/2024/03/bac-bvo_russkiy-yazik.pdf"
+              "examId": 103,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": 1,
+          "nameSpecialization": "37.03.01 - Психология",
+          "nameProgram": "Психологическая диагностика и развитие личности",
+          "form": 2,
+          "kcp": 25,
+          "duration": "4 года 6 мес.",
+          "score": "-",
+          "price": 175000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 3
+            },
+            {
+              "id": 4,
+              "examId": 6,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 104,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 103,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "type": 1,
+          "nameSpecialization": "44.03.02 - Психолого-педагогическое образование",
+          "nameProgram": "Психология и педагогика. Профессиональное консультирование",
+          "form": 1,
+          "kcp": 25,
+          "duration": "5 лет",
+          "score": "-",
+          "price": 309000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 3
+            },
+            {
+              "id": 4,
+              "examId": 6,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 104,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 103,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "type": 1,
+          "nameSpecialization": "44.03.02 - Психолого-педагогическое образование",
+          "nameProgram": "Практическая возрастная психология. Специальная психология",
+          "form": 1,
+          "kcp": 25,
+          "duration": "5 лет",
+          "score": "-",
+          "price": 309000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 3
+            },
+            {
+              "id": 4,
+              "examId": 6,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 104,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 103,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "type": 1,
+          "nameSpecialization": "44.03.02 - Психолого-педагогическое образование",
+          "nameProgram": "Социальная психология и педагогика. Организация деятельности в сфере молодёжной политики",
+          "form": 1,
+          "kcp": 25,
+          "duration": "5 лет",
+          "score": "-",
+          "price": 309000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 3
+            },
+            {
+              "id": 4,
+              "examId": 6,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 104,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 103,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "type": 1,
+          "nameSpecialization": "44.03.02 - Психолого-педагогическое образование",
+          "nameProgram": "Психология и педагогика. Психология семьи и семейных отношений",
+          "form": 2,
+          "kcp": 25,
+          "duration": "5 лет",
+          "score": "-",
+          "price": 175000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 1,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 7,
+              "priority": 3
+            },
+            {
+              "id": 4,
+              "examId": 6,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 104,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 8,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 103,
+              "priority": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "nameFaculty": "Институт физики, технологии и информационных систем",
+      "programsFaculty": [
+        {
+          "id": 1,
+          "type": 1,
+          "nameSpecialization": "03.03.02 - Физика",
+          "nameProgram": "Фундаментальная физика и прорывные технологии",
+          "form": 1,
+          "kcp": 25,
+          "duration": "4 года",
+          "score": -1,
+          "price": 342000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 9,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 6,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 11,
+              "priority": 2
+            },
+            {
+              "id": 4,
+              "examId": 3,
+              "priority": 2
+            },
+            {
+              "id": 5,
+              "examId": 8,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 106,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 105,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 8,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": 1,
+          "nameSpecialization": "09.03.02 – Информационные системы и технологии ",
+          "nameProgram": "Информационные технологии в образовании",
+          "form": 3,
+          "kcp": 25,
+          "duration": "4 года 6 мес.",
+          "score": -1,
+          "price": 137000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 6,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 11,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 9,
+              "priority": 2
+            },
+            {
+              "id": 4,
+              "examId": 3,
+              "priority": 2
+            },
+            {
+              "id": 5,
+              "examId": 8,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 105,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 106,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 8,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "type": 1,
+          "nameSpecialization": "44.03.01 - Педагогическое образование ",
+          "nameProgram": "Физика и Информатика",
+          "form": 1,
+          "kcp": 21,
+          "duration": "5 лет",
+          "score": 208,
+          "price": 309000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 9,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 11,
+              "priority": 1
+            },
+            {
+              "id": 3,
+              "examId": 6,
+              "priority": 1
+            },
+            {
+              "id": 4,
+              "examId": 7,
+              "priority": 2
+            },
+            {
+              "id": 5,
+              "examId": 8,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 105,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 103,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 8,
+              "priority": 3
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "type": 1,
+          "nameSpecialization": "44.03.01 - Педагогическое образование ",
+          "nameProgram": "Технология, Информатика и Дополнительное образование",
+          "form": 1,
+          "kcp": 19,
+          "duration": "6 лет",
+          "score": -1,
+          "price": 309000,
+          "examsEGE": [
+            {
+              "id": 1,
+              "examId": 9,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 11,
+              "priority": 1
+            },
+            {
+              "id": 3,
+              "examId": 6,
+              "priority": 1
+            },
+            {
+              "id": 4,
+              "examId": 7,
+              "priority": 2
+            },
+            {
+              "id": 5,
+              "examId": 8,
+              "priority": 3
+            }
+          ],
+          "examsSPO": [
+            {
+              "id": 1,
+              "examId": 105,
+              "priority": 1
+            },
+            {
+              "id": 2,
+              "examId": 103,
+              "priority": 2
+            },
+            {
+              "id": 3,
+              "examId": 8,
+              "priority": 3
             }
           ]
         }
