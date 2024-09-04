@@ -7,6 +7,9 @@ import { useSelector } from "react-redux";
 
 export const Tree = () => {
   const structureTree = useSelector((state) => state.tree.listPrograms);
+  const structureTreeFiltered = useSelector(
+    (state) => state.tree.filteredListPrograms
+  );
   const [isShowFilter, setIsShowFilter] = useState({
     EGE: false,
   });
@@ -24,7 +27,10 @@ export const Tree = () => {
             <TopButtons setIsShowFilter={setIsShowFilter} />
           </div>
           <div className={S["container-programs"]}>
-            {structureTree.map((faculty) => (
+            {(structureTreeFiltered
+              ? structureTreeFiltered
+              : structureTree
+            ).map((faculty) => (
               <SpoilerFaculty
                 key={faculty.id}
                 faculty={faculty}

@@ -1,21 +1,23 @@
 import { useState } from "react";
 import S from "./FilterEGE.module.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFilters } from "../../store/treeSlice";
 
 export const FilterEGE = ({ setIsShowFilter }) => {
+  const dispatch = useDispatch();
   const programs = useSelector((state) => state.tree.listPrograms);
   const [examsScore, setExamsScore] = useState({
-    biology: { nameExam: "Биология", score: undefined },
-    geography: { nameExam: "География", score: undefined },
-    fLanguages: { nameExam: "Иностранный язык", score: undefined },
-    history: { nameExam: "История", score: undefined },
-    literature: { nameExam: "Литература", score: undefined },
-    mathematics: { nameExam: "Математика", score: undefined },
-    socialS: { nameExam: "Обществознание", score: undefined },
-    rLanguage: { nameExam: "Русский язык", score: undefined },
-    physics: { nameExam: "Физика", score: undefined },
-    chemistry: { nameExam: "Химия", score: undefined },
-    informatics: { nameExam: "Информатика и ИКТ", score: undefined },
+    biology: { id: 1, nameExam: "Биология", score: "" },
+    geography: { id: 2, nameExam: "География", score: "" },
+    fLanguages: { id: 3, nameExam: "Иностранный язык", score: "" },
+    history: { id: 4, nameExam: "История", score: "" },
+    literature: { id: 5, nameExam: "Литература", score: "" },
+    mathematics: { id: 6, nameExam: "Математика", score: "" },
+    socialS: { id: 7, nameExam: "Обществознание", score: "" },
+    rLanguage: { id: 8, nameExam: "Русский язык", score: "" },
+    physics: { id: 9, nameExam: "Физика", score: "" },
+    chemistry: { id: 10, nameExam: "Химия", score: "" },
+    informatics: { id: 11, nameExam: "Информатика и ИКТ", score: "" },
   });
 
   const handleChangeExamValue = (nameExam, value) => {
@@ -33,7 +35,7 @@ export const FilterEGE = ({ setIsShowFilter }) => {
     return programs.reduce((acc, faculty) => {
       const validPrograms = faculty.programsFaculty.filter((program) => {
         const enteredExams = Object.keys(examsScore).filter(
-          (examKey) => examsScore[examKey].score != null
+          (examKey) => examsScore[examKey].score != ""
         );
 
         if (enteredExams.length === 0) {
@@ -44,15 +46,13 @@ export const FilterEGE = ({ setIsShowFilter }) => {
           if (!groups[exam.priority]) {
             groups[exam.priority] = [];
           }
-          groups[exam.priority].push(exam.nameExam);
+          groups[exam.priority].push(exam.examId);
           return groups;
         }, {});
 
         const isValid = Object.values(priorityGroups).every((group) => {
-          const hasMatchingExam = group.some((examName) =>
-            enteredExams.some(
-              (examKey) => examsScore[examKey].nameExam === examName
-            )
+          const hasMatchingExam = group.some((examId) =>
+            enteredExams.some((examKey) => examsScore[examKey].id === examId)
           );
 
           return hasMatchingExam;
@@ -71,8 +71,21 @@ export const FilterEGE = ({ setIsShowFilter }) => {
     }, []);
   };
 
-  const result = filterPrograms();
-  console.log(result);
+  const handleChangeFilters = () => {
+    dispatch(changeFilters(filterPrograms()));
+    handleCloseWindow();
+  };
+
+  const handleClearExamValue = () => {
+    setExamsScore((prevScores) => {
+      const updatedScores = { ...prevScores };
+      Object.keys(updatedScores).forEach((key) => {
+        updatedScores[key].score = "";
+      });
+      return updatedScores;
+    });
+    dispatch(changeFilters(false));
+  };
 
   return (
     <div className={S["wrapper"]}>
@@ -110,7 +123,11 @@ export const FilterEGE = ({ setIsShowFilter }) => {
           ))}
         </div>
         <div className={S["buttons"]}>
-          <button className={S["buttons__accept"]}>Применить</button>
+          <button
+            className={S["buttons__accept"]}
+            onClick={() => handleChangeFilters()}>
+            Применить
+          </button>
           <button
             className={S["buttons__clear"]}
             onClick={() => handleClearExamValue()}>
