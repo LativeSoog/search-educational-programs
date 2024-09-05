@@ -1,19 +1,41 @@
 @import "./../../assets/styles/variables.scss";
 
+@mixin button {
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+
 .toolbar {
+  display: flex;
+  gap: 10px;
+
   &__button {
-    font-size: 16px;
-    border: 1px solid $color-turquoise;
-    border-radius: 4px;
-    background: $color-turquoise;
+    @include button;
     color: #fff;
-    padding: 10px 20px;
-    transition: background 0.3s ease;
+    border: 1px solid $color-turquoise;
+    background: $color-turquoise;
+    transition: box-shadow 0.3s ease;
 
     &:hover {
       cursor: pointer;
-      background: #fff;
-      color: $color-turquoise;
+      box-shadow: 0px 0px 7px $color-turquoise;
+    }
+
+    &_filter {
+      @include button;
+      color: #750000;
+      border: 1px solid #750000;
+      background: transparent;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        background: #750000;
+        color: #fff;
+      }
     }
   }
 }
