@@ -7,17 +7,27 @@ export const FilterEGE = ({ setIsShowFilter }) => {
   const dispatch = useDispatch();
   const programs = useSelector((state) => state.tree.listPrograms);
   const [examsScore, setExamsScore] = useState({
-    biology: { id: 1, nameExam: "Биология", score: "" },
-    geography: { id: 2, nameExam: "География", score: "" },
-    fLanguages: { id: 3, nameExam: "Иностранный язык", score: "" },
-    history: { id: 4, nameExam: "История", score: "" },
-    literature: { id: 5, nameExam: "Литература", score: "" },
-    mathematics: { id: 6, nameExam: "Математика", score: "" },
-    socialS: { id: 7, nameExam: "Обществознание", score: "" },
-    rLanguage: { id: 8, nameExam: "Русский язык", score: "" },
-    physics: { id: 9, nameExam: "Физика", score: "" },
-    chemistry: { id: 10, nameExam: "Химия", score: "" },
-    informatics: { id: 11, nameExam: "Информатика и ИКТ", score: "" },
+    biology: { id: 1, nameExam: "Биология", minScore: 39, score: "" },
+    geography: { id: 2, nameExam: "География", minScore: 40, score: "" },
+    fLanguages: {
+      id: 3,
+      nameExam: "Иностранный язык",
+      minScore: 30,
+      score: "",
+    },
+    history: { id: 4, nameExam: "История", minScore: 35, score: "" },
+    literature: { id: 5, nameExam: "Литература", minScore: 40, score: "" },
+    mathematics: { id: 6, nameExam: "Математика", minScore: 39, score: "" },
+    socialS: { id: 7, nameExam: "Обществознание", minScore: 42, score: "" },
+    rLanguage: { id: 8, nameExam: "Русский язык", minScore: 42, score: "" },
+    physics: { id: 9, nameExam: "Физика", minScore: 39, score: "" },
+    chemistry: { id: 10, nameExam: "Химия", minScore: 39, score: "" },
+    informatics: {
+      id: 11,
+      nameExam: "Информатика и ИКТ",
+      minScore: 44,
+      score: "",
+    },
   });
 
   const handleChangeExamValue = (nameExam, value) => {
