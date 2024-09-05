@@ -52,7 +52,7 @@
 
 .spoiler-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   &__item {
     display: flex;
@@ -80,44 +80,6 @@
   border-radius: 10px;
   padding: 10px;
   margin-top: 10px;
-
-  &__section {
-    display: flex;
-    flex-direction: column;
-
-    &:last-child {
-      border-left: 2px solid $color-line;
-      padding-left: 10px;
-    }
-  }
-
-  &__description {
-    font-family: "latoblack";
-    color: $color-deep-blue;
-    text-align: center;
-  }
-}
-
-.exams-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  gap: 4px;
-  list-style: none;
-  counter-reset: item;
-  padding: 0;
-  margin-top: 4px;
-
-  &__item {
-    counter-increment: item;
-    color: $color-blue;
-
-    &::before {
-      content: counter(item) ".";
-      margin-right: 10px;
-    }
-  }
 }
 
 .spoiler-more {

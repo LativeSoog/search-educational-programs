@@ -2,7 +2,7 @@ import { useState } from "react";
 import S from "./SpoilerFaculty.module.scss";
 import { SpoilerProgram } from "./SpoilerProgram";
 
-export const SpoilerFaculty = () => {
+export const SpoilerFaculty = ({ faculty }) => {
   const [isOpenSpoiler, setIsOpenSpoiler] = useState(false);
 
   const toggleSpoiler = () => {
@@ -18,11 +18,16 @@ export const SpoilerFaculty = () => {
           src={`/assets/images/icon/${isOpenSpoiler ? "minus" : "plus"}.svg`}
           className={S["spoiler-visible__icon"]}
         />
-        <p className={S["spoiler-visible__text"]}>Географический факультет</p>
+        <p className={S["spoiler-visible__text"]}>{faculty.nameFaculty}</p>
       </div>
       {isOpenSpoiler && (
         <div className={S["spoiler-hidden"]}>
-          <SpoilerProgram />
+          {faculty.programsFaculty.map((program) => (
+            <SpoilerProgram
+              key={program.id}
+              program={program}
+            />
+          ))}
         </div>
       )}
     </div>
