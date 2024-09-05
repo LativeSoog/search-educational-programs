@@ -29,7 +29,7 @@ export const ExamsList = ({ nameList, examsList }) => {
 
   return (
     <div className={S["container-exams"]}>
-      <p className={S["container-exams__title"]}>{nameList}</p>
+      <h4 className={S["container-exams__title"]}>{nameList}</h4>
       <ol className={S["exams-list"]}>
         {sortedExams.map(({ priority, exams }) => (
           <li
