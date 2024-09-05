@@ -1,5 +1,9 @@
 @import "./../../assets/styles/variables.scss";
 
+.spoiler:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .spoiler-visible {
   display: flex;
   align-items: center;
